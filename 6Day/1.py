@@ -1,8 +1,16 @@
-def mul(*numbers):
-    result = 1
-    for n in numbers:
-        result *= n
-    return result
+import random as rd
+initial_list = []
 
 
-print(mul(7, 2, 3))
+def making_list(a_list):
+    for i in range(1, 46):
+        a_list.append(i)
+    return a_list
+
+
+making_list(initial_list)
+rd.shuffle(initial_list)
+
+six_list = initial_list[0:6]
+sort_list = sorted(six_list)
+print(sort_list)

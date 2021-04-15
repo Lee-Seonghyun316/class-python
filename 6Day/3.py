@@ -1,16 +1,29 @@
-def acc(num_1, num_2):
-    mul = num_1 * num_2
-    if num_2 == 0:
-        div = 'error'
-    else:
-        div = num_1 / num_2
-    plu = num_1 + num_2
-    min = num_1 - num_2
-    return mul, div, plu, min
+import turtle as t
+print('공백기준 3개의 값을 입력하시오.')
+num_1, num_2, num_3 = input().split()
+num_1 = int(num_1)
+num_2 = int(num_2)
+num_3 = int(num_3)
+
+width = 20
+move = 20*2
 
 
-data_1, data_2 = input().split()
-num_1 = int(data_1)
-num_2 = int(data_2)
+def drawing_graph(height, move):
+    for i in range(4):
+        if i % 2 == 1:
+            t.forward(height)
+        else:
+            t.forward(width)
+        t.left(90)
+    t.penup()
+    t.forward(width)
+    t.pendown()
+    t.forward(move)
 
-print(acc(num_1, num_2))
+
+drawing_graph(num_1, move)
+drawing_graph(num_2, move)
+drawing_graph(num_3, 0)
+
+t.done()

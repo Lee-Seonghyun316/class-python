@@ -1,34 +1,15 @@
-data_1, data_2 = input().split()
-num_1 = int(data_1)
-num_2 = int(data_2)
+import random as rd
+initial_list = []
 
 
-def mul(num_1, num_2):
-    return num_1 * num_2
+def making_list(a_list):
+    for i in range(1, 46):
+        a_list.append(i)
+    return a_list
 
 
-print(mul(num_1, num_2))
+making_list(initial_list)
+six_list = rd.sample(initial_list, 6)
+sort_list = sorted(six_list)
 
-
-def div(num_1, num_2):
-    if num_2 == 0:
-        return 'error'
-    else:
-        return num_1 / num_2
-
-
-print(div(num_1, num_2))
-
-
-def plu(num_1, num_2):
-    return num_1 + num_2
-
-
-print(plu(num_1, num_2))
-
-
-def min(num_1, num_2):
-    return num_1 - num_2
-
-
-print(min(num_1, num_2))
+print(sort_list)
