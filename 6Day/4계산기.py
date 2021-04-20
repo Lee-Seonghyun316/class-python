@@ -1,23 +1,39 @@
+# 계산기 만드는 코드(input값이 두개인 특이한 형태)
+# 이런 시간이 오래 걸리는 코드는 안 나올 가능성이 크다
 from tkinter import *
 from tkinter import ttk
+# 라이브러리 선언
 
 window = Tk()
+# 창 하나 만들고
 window.title('계산기')
+# 제목 달아주고
 window.geometry('400x4000')
+# 윈도우 크기 설정해주고
 Label(window, text='입력값').grid(column=0, row=0)
+# 입력값 lavel 생성, 위치 설정
 Label(window, text='입력값').grid(column=0, row=1)
+# 입력값 lavel 생성
 Label(window, text="입력값에 포커스를 준 후,\n 번호를 클릭하면 번호가 입력됩니다.\n 이후 연산자를 누르면 \n입력값에 표시되고 \n등호를 눌러 결과를 확인합니다. \n").grid(
     row=7, column=1)
+# 사용법 해설
 res_label = Label(window, text='출력값')
+# 출력값 라벨
 res_label.grid(column=0, row=2)
 
 # input1 = Entry(window, width=10)
 input2 = Entry(window, width=10)
+# entry 생성
 result = Label(window, width=10, text=0, bg='white')
+# 결과 출력하는 라벨 설정
 result_text = "0"
+# 결과의 Initial 값 설정
+
 # input1.grid(column=1, row=0)
 input2.grid(column=1, row=1)
 result.grid(column=1, row=2)
+
+# 계산 함수(기호 출력과 계산 동시 수행)
 
 
 def add(value):
@@ -43,6 +59,8 @@ def div(value):
     result_text = str(float(input1.get())/float(input2.get()))
     input1.insert("end", value)
 
+# 결과 출력 함수
+
 
 def cal():
     global result_text
@@ -54,6 +72,7 @@ def button_pressed(value):
     # 텍스트 창으로 숫자 전송.'end'는 오른쪽끝에 추가하라는 의미.
     a.insert("end", value)
     print(value, "pressed")
+# 버튼 누르면 화면에 입력됨
 
 
 # 텍스트창의 값 저장할 변수.
