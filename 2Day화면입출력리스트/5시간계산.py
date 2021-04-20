@@ -1,3 +1,4 @@
+# 시간게산 프로그램
 second = int(input("변환할 초를 입력하시오 : "))
 day = second//86400
 hour = (second % 86400)//3600

@@ -1,3 +1,4 @@
+# 나이에 따른 학생유형
 born_year1 = input("당신이 태어난 연도를 입력하세요\n")
 age = 2021 - int(born_year1) + 1
 

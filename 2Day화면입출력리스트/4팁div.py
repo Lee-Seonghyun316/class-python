@@ -1,3 +1,4 @@
+# tip비용계산
 food = int(input("음식 비용을 입력 하시오 : "))
 tip = int(input("팁 비율을 입력하시오(%) : "))
 result = food+food*(tip/100)
