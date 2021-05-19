@@ -1,4 +1,4 @@
-# Day9 폴더 안에 있어야 실행 된다!
+# Day9 폴더 안에 1.txt 있어야 실행 된다!
 # 문자열 isalpha매소드 파일입출력 format
 f = open("./Day9/1.txt", 'r')
 data = f.read()
