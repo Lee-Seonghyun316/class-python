@@ -54,6 +54,11 @@ for line in rdr:
         temp += float(line[6])
         temp += float(line[7])
         count += 3
+averagename.append(grade)
+averagename.append(class_name)
+averagename.append(temp/count)
+# print(temp)
+average.append(averagename)
 print(average)
 f.close()
 final = []

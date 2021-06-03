@@ -1,3 +1,4 @@
+# 다항식 해 구하기 -> 시험 출제 가능성
 import numpy as np
 from numpy.core.defchararray import array
 # a = np.array([[2, 3], [1, -2]])
