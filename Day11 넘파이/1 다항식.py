@@ -1,4 +1,9 @@
 # 다항식 해 구하기 -> 시험 출제 가능성
+
+# 수식을 입력 받아 답을 내시오
+# 3x+4y=10 이면 3 4 10 을 입력 받으시오
+# 두개의 식의 값을 입력 받고 두 식을 만족하는 X 와 Y의 값을 출력하시오
+
 import numpy as np
 from numpy.core.defchararray import array
 # a = np.array([[2, 3], [1, -2]])

@@ -1,3 +1,6 @@
+# 5. 6면체 주사위를 100 번 굴려서 4,5,6 이 나오면 리스트에 저장하시오
+# list comprehension을 사용하여 저장하시오.
+
 from random import *
 
 dice = [1, 2, 3, 4, 5, 6]
