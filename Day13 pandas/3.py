@@ -5,7 +5,7 @@
 import pandas as pd
 from pandas import DataFrame
 
-test = pd.read_csv('./Day13/시험 성적.csv', index_col=2, encoding='UTF-8')
+test = pd.read_csv('./Day13 pandas/시험 성적.csv', index_col=2, encoding='UTF-8')
 
 first_name = list(test["성"])
 grade = list(test["학년"])
@@ -97,4 +97,4 @@ text1 = grade_firstName_max(list_park, last_grade, "박")
 text_list.append(text1)
 
 dataframe = pd.DataFrame(text_list)
-dataframe.to_csv("./Day13/학년성씨별 최고점.csv", header=False, index=False)
+dataframe.to_csv("./Day13 pandas/학년성씨별 최고점.csv", header=False, index=False)
