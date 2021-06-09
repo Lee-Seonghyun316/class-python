@@ -7,17 +7,17 @@ from numpy.core.defchararray import array
 # print(c)
 
 new_a = list(map(int, input("공백기준 첫번째 일차다항식 입력: ").split()))
-new_b = list(map(int, input("공백기준 첫번째 일차다항식 입력: ").split()))
+new_b = list(map(int, input("공백기준 두번째 일차다항식 입력: ").split()))
 
 # print(new_a)
 A = []
 A.append(new_a[0:2])
 A.append(new_b[0:2])
-# print(A)
+print(A)
 B = []
 B.append(new_a[2])
 B.append(new_b[2])
-# print(B)
+print(B)
 
 A = np.array(A)
 B = np.array(B)

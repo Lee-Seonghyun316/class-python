@@ -13,8 +13,10 @@ grade = list(test["학년"])
 # first_name 으로 반복문
 # 이전 first_name 다르면 처음인덱스first_index부터
 #  이전인덱스까지의 Max 구하기
+
 # 현재 인덱스를 처음인덱스에 넣기
 # 현재 first_name 이전 first_name 넣기
+
 # first_name 초기값은 "김"
 # 처음 인덱스 초기값은 0
 # 같으면 넘어가기
@@ -67,7 +69,7 @@ for i in range(0, len(test)):
     now_grade = grade[i]
 
     if last_grade != now_grade:
-
+        # 성씨별 list ㅡmax값 구하기
         text1 = grade_firstName_max(list_kim, last_grade, "김")
         text_list.append(text1)
         text1 = grade_firstName_max(list_lee, last_grade, "이")
