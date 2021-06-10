@@ -29,7 +29,7 @@ for i in range(0, len(test)):
     if last_class != now_class:
         first_mean = test.iloc[[first_index, i-1], [4, 5, 6]].mean()
         text = ["{} 학년 {}반의 전체 평균 점수 : {}".format(grade_index, last_class,
-                                                  (first_mean.iloc[0]+first_mean[1]+first_mean[2])/3)]
+                                                  (first_mean[0]+first_mean[1]+first_mean[2])/3)]
         text_list.append(text)
         first_index = i
         last_class = now_class
@@ -37,7 +37,10 @@ for i in range(0, len(test)):
 
 first_mean = test.iloc[[first_index, i-1], [4, 5, 6]].mean()
 text = ["{} 학년 {}반의 전체 평균 점수 : {}".format(grade_index, last_class,
-                                          (first_mean.iloc[0]+first_mean[1]+first_mean[2])/3)]
+                                          (first_mean[0]+first_mean[1]+first_mean[2])/3)]
+first_index = i
+last_class = now_class
+grade_index = grade[i]
 text_list.append(text)
 
 

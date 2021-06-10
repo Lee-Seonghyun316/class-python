@@ -1,27 +1,93 @@
-# 파일 포인터는 입출력 동작이 발생하는 위치를 나타낸다.
-# 파일을 처음 열었을 때 포인터는 파일의 첫 번째 바이트를 가리키게 되고, 입출력 연산이 실행되면 파일 포인터가 자동적으로 이동한다.
+# 수식을 입력 받아 답을 내시오
+# 이차 방정식 두개를 입력하여 그 식을 만족하는 X와 Y의 값을 출력하시오
 
-# 예시 :
-# f. read()
-# 로 파일을 한번 읽은 후
-
-# line = f.read()
-# print(line)
-# 을 하면 아무것도 출력되지 않는다.
-
-# 그 이유는 앞서 f.read() 를 한번 실행한 뒤, 파일 포인터가 파일의 맨 끝으로 가버렸기 때문이다.
-# 파일 포인터의 위치는 f.tell()을 이용해서 확인가능하다.
-#  f.seek() 를 이용해 파일 포인터를 가장 앞으로 옮겨준 후, 원래 실행하려고 했던 read()의 반환 값을 변수에 저장하면 file 내용이 출력되는 것을 확인할 수 있다.
+# 3x+4y = 10
+# 5x+3y = 7
 
 
-f = open("./review for final test/1.txt", 'r')
+import numpy as np
+from numpy.core.defchararray import array
 
-f. read()
-line = f.read()
-print(line)
+new_first = list(input("공백기준 첫번째 일차다항식 입력: "))
+new_second = input("공백기준 두번째 일차다항식 입력: ")
 
-f.tell()
-f.seek(0)
+y_index = 0
+y_check = 0
+a1 = 1
+b1 = 1
+for i in range(0, len(new_first)):
+    if new_first[i] == 'x':
+        a1 = new_first[0:i]
+        y_index = i+1
+    if new_first[i] == 'y':
+        b1 = new_first[y_index+1:i]
+        y_check = i+1
+    if new_first[i] == '=':
+        c1 = new_first[i+1:len(new_first)]
+if y_index == 0:
+    print("수식 1은 x의 계수가 0입니다. ")
+    a1 = 0
 
-line = f.read()
-print(line)
+if y_check == 0:
+    print("수식 1은 y의 계수가 0입니다. ")
+    b1 = 0
+
+
+y_index = 0
+y_check = 0
+a2 = 1
+b2 = 1
+for i in range(0, len(new_second)):
+    if new_second[i] == 'x':
+        a2 = new_second[0:i]
+        y_index = i+1
+    if new_second[i] == 'y':
+        b2 = new_second[y_index+1:i]
+        y_check = i+1
+    if new_second[i] == '=':
+        c2 = new_second[i+1:len(new_first)]
+if y_index == 0:
+    print("수식 2는 x의 계수가 0입니다. ")
+    a2 = 0
+
+if y_check == 0:
+    print("수식 2는 y의 계수가 0입니다. ")
+    b2 = 0
+
+
+def making_int(list_a):
+    text = ""
+    for i in list_a:
+        text += i
+    number = int(text)
+    return number
+
+
+if a1 != 0 and a1 != 1:
+    a1 = making_int(a1)
+# print(a)
+if b1 != 0 and b1 != 1:
+    b1 = making_int(b1)
+c1 = making_int(c1)
+if a2 != 0 and a2 != 1:
+    a2 = making_int(a2)
+# print(a)
+if b2 != 0 and b2 != 1:
+    b2 = making_int(b2)
+c2 = making_int(c2)
+
+
+A = []
+A.append([a1, b1])
+A.append([a2, b2])
+print(A)
+B = []
+B.append(c1)
+B.append(c2)
+print(B)
+
+A = np.array(A)
+B = np.array(B)
+
+C = np.linalg.solve(A, B)
+print("X : {} Y: {}".format(C[0], C[1]))
